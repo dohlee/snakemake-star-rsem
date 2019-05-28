@@ -6,3 +6,8 @@ dependencies:
     - star
     - rsem
     - samtools
+    ### You may not need both of them.
+    - bowtie
+    - bowtie2
+    ###
+
