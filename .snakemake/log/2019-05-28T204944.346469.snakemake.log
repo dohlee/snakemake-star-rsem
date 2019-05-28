@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 59 of /data/project/dohoon/workbench/snakemake-star-rsem/rules/rsem.smk:
+Missing input files for rule rsem_calculate_expression_pe:
+/data/project/dohoon/workbench/rsem_index/hg38

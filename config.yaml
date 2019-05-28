@@ -1,0 +1,74 @@
+manifest: '/data/project/dohoon/workbench/snakemake-star-rsem/manifest.tsv'
+data_dir: '/data/project/dohoon/workbench/data'
+result_dir: '/data/project/dohoon/workbench/result'
+star_index_dir: '/data/project/dohoon/workbench/star_index'
+rsem_reference_dir: '/data/project/dohoon/workbench/rsem_index'
+rsem_reference: '/data/project/dohoon/workbench/rsem_index/hg38.transcripts.fa'
+reference:
+    name: 'hg38'
+    prefix: '/data/project/dohoon/reference/hg38/hg38'
+    fasta: '/data/project/dohoon/reference/hg38/hg38.fa'
+    gtf: '/data/project/dohoon/reference/hg38/hg38.annotation.gtf'
+star_genome_generate:
+    extra: ''
+    sjdb_gtf_file: ''
+    sjdb_overhang: 100
+    sjdb_gtf_chr_prefix: ''
+    sjdb_gtf_tag_exon_parent_transcript: ''
+star_2_pass_single:
+    extra: ''
+    sjdb_gtf_file: ''
+    sjdb_overhang: 100
+    sjdb_gtf_chr_prefix: ''
+    sjdb_gtf_tag_exon_parent_transcript: ''
+rsem_prepare_reference:
+    extra: ''
+    gff3_rna_patterns: 'mRNA'
+    trusted_sources: False
+    transcript_to_gene_map: False
+    allele_to_gene_map: False
+    quiet: False
+rsem_calculate_expression_pe:
+    extra: ''
+    no_qualities: False
+    strandedness: 'none'
+    alignments: False
+    bowtie2: False
+    star: False
+    append_names: False
+    seed: 0
+    single_cell_prior: False
+    calc_pme: False
+    calc_ci: False
+    quiet: False
+    sort_bam_by_read_name: False
+    no_bam_output: False
+    sampling_for_bam: False
+    output_genome_bam: False
+    sort_bam_by_coordinate: False
+    sort_bam_memory_per_thread: '1G'
+rsem_calculate_expression_se:
+    extra: ''
+    no_qualities: False
+    strandedness: 'none'
+    alignments: False
+    bowtie2: False
+    star: False
+    append_names: False
+    seed: 0
+    single_cell_prior: False
+    calc_pme: False
+    calc_ci: False
+    quiet: False
+    sort_bam_by_read_name: False
+    no_bam_output: False
+    sampling_for_bam: False
+    output_genome_bam: False
+    sort_bam_by_coordinate: False
+    sort_bam_memory_per_thread: '1G'
+threads:      
+    star_genome_generate: 1
+    star_2_pass_single: 1
+    rsem_prepare_reference: 1
+    rsem_calculate_expression_se: 8
+    rsem_calculate_expression_pe: 8

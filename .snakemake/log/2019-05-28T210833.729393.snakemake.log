@@ -1,0 +1,7 @@
+star_genome_generate
+star_2_pass_se
+star_2_pass_pe
+rsem_prepare_reference
+rsem_calculate_expression_pe
+rsem_calculate_expression_se
+all

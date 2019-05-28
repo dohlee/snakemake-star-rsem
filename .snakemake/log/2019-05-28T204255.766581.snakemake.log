@@ -1,0 +1,4 @@
+AttributeError in line 14 of /data/project/dohoon/workbench/snakemake-star-rsem/Snakefile:
+'DataFrame' object has no attribute 'library_layout'
+  File "/data/project/dohoon/workbench/snakemake-star-rsem/Snakefile", line 14, in <module>
+  File "/data/home/dohoon/.env/lab/lib/python3.6/site-packages/pandas/core/generic.py", line 5067, in __getattr__

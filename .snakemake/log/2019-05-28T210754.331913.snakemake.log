@@ -1,0 +1,3 @@
+WorkflowError in line 4 of /data/project/dohoon/workbench/snakemake-star-rsem/Snakefile:
+Config file is not valid JSON or YAML. In case of YAML, make sure to not mix whitespace and tab indentation.
+  File "/data/project/dohoon/workbench/snakemake-star-rsem/Snakefile", line 4, in <module>

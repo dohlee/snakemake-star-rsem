@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 75 of /data/project/dohoon/workbench/snakemake-star-rsem/rules/star.smk:
+Missing input files for rule star_2_pass_pe:
+/data/project/dohoon/workbench/data/case1.read2.fastq.gz
+/data/project/dohoon/workbench/data/case1.read1.fastq.gz
