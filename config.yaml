@@ -66,9 +66,10 @@ rsem_calculate_expression_se:
     output_genome_bam: False
     sort_bam_by_coordinate: False
     sort_bam_memory_per_thread: '1G'
-threads:      
-    star_genome_generate: 1
-    star_2_pass_single: 1
+threads:
+    star_genome_generate: 8
+    star_2_pass_se: 1
+    star_2_pass_pe: 1
     rsem_prepare_reference: 1
     rsem_calculate_expression_se: 8
     rsem_calculate_expression_pe: 8

@@ -45,7 +45,7 @@ rule star_2_pass_se:
         # There is no need to output sam or unsorted bam file!
         # So this wrapper includes '--outSAMtype BAM SortedByCoordinate' option by default.
         RESULT_DIR / '01_star' / 'se' / '{sample}.sorted.bam'
-    threads: config['threads']['star_2_pass_single']
+    threads: config['threads']['star_2_pass_se']
     params:
         # Optional parameters. Read through the comments carefully.
         # Provide appropriate option for your data,
@@ -84,7 +84,7 @@ rule star_2_pass_pe:
         # There is no need to output sam or unsorted bam file!
         # So this wrapper includes '--outSAMtype BAM SortedByCoordinate' option by default.
         RESULT_DIR / '01_star' / 'pe' / '{sample}.sorted.bam'
-    threads: config['threads']['star_2_pass_single']
+    threads: config['threads']['star_2_pass_pe']
     params:
         # Optional parameters. Read through the comments carefully.
         # Provide appropriate option for your data,
