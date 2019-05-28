@@ -27,4 +27,15 @@ All the samples that you are going to process should be specified in `manifest.c
 
 You can change the name of the manifest file, but you have to change the value of `manifest` field in `config.yaml`.
 
-
+## Running the pipeline
+After setting all the configurations and manifest, you can dry-run the pipeline with `-n` option and see if the pipeline works appropriately.
+Please note that even the pipeline seems OK for now, some unexpected errors may get you in trouble at runtime.
+In this case, you should inspect log files in `logs` directory, and troubleshoot the error.
+```shell
+$ snakemake -n
+```
+If it seems OK, provide the pipeline with appropriate number of cores with `-j` option, and it will find optimal execution scenario that maximizes the usage of cores. 
+`-p` option makes the actual commands to be printed out when they are to be executed.
+```shell
+$ snakemake -j 32 -p 
+```
