@@ -1,0 +1,8 @@
+name: star-rsem
+channels:
+    - bioconda
+dependencies:
+    - snakemake
+    - star
+    - rsem
+    - samtools
