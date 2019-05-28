@@ -18,3 +18,13 @@ If you created a new conda environment, remove the environment when you are done
 ```shell
 $ conda env remove star-rsem
 ```
+
+## Configuring config.yaml
+Every parameter for tools should be configured in `config.yaml`. You should not modify snakemake rules in `rules` directory, unless you have good reason to tweak it.
+
+## Preparing manifest file.
+All the samples that you are going to process should be specified in `manifest.csv` file. The first row should be a header, having 'name' and 'library\_layout' as mandatory fields.
+
+You can change the name of the manifest file, but you have to change the value of `manifest` field in `config.yaml`.
+
+
