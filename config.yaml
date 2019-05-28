@@ -1,4 +1,4 @@
-manifest: '/data/project/dohoon/workbench/snakemake-star-rsem/manifest.tsv'
+manifest: '/data/project/dohoon/workbench/snakemake-star-rsem/manifest.csv'
 data_dir: '/data/project/dohoon/workbench/data'
 result_dir: '/data/project/dohoon/workbench/result'
 star_index_dir: '/data/project/dohoon/workbench/star_index'
