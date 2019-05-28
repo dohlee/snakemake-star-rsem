@@ -11,13 +11,13 @@ reference:
     gtf: '/data/project/dohoon/reference/hg38/hg38.annotation.gtf'
 star_genome_generate:
     extra: ''
-    sjdb_gtf_file: ''
+    sjdb_gtf_file: '/data/project/dohoon/reference/hg38/hg38.annotation.gtf'
     sjdb_overhang: 100
     sjdb_gtf_chr_prefix: ''
     sjdb_gtf_tag_exon_parent_transcript: ''
 star_2_pass_single:
     extra: ''
-    sjdb_gtf_file: ''
+    sjdb_gtf_file: '/data/project/dohoon/reference/hg38/hg38.annotation.gtf'
     sjdb_overhang: 100
     sjdb_gtf_chr_prefix: ''
     sjdb_gtf_tag_exon_parent_transcript: ''

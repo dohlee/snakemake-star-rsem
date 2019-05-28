@@ -40,7 +40,7 @@ rule star_2_pass_se:
     input:
         # Required input.
         reads = DATA_DIR / '{sample}.fastq.gz',
-        star_index = directory(config['star_index_dir']),
+        star_index = config['star_index_dir'],
     output:
         # There is no need to output sam or unsorted bam file!
         # So this wrapper includes '--outSAMtype BAM SortedByCoordinate' option by default.
@@ -79,7 +79,7 @@ rule star_2_pass_pe:
             DATA_DIR / '{sample}.read1.fastq.gz',
             DATA_DIR / '{sample}.read2.fastq.gz',
         ],
-        star_index = directory(config['star_index_dir']),
+        star_index = config['star_index_dir'],
     output:
         # There is no need to output sam or unsorted bam file!
         # So this wrapper includes '--outSAMtype BAM SortedByCoordinate' option by default.
