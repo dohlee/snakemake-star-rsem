@@ -168,7 +168,7 @@ rule rsem_calculate_expression_pe:
 rule rsem_calculate_expression_se:
     input:
         # This rule is for paired-end reads.
-        reads = [
+        read = [
             RESULT_DIR / '01_star' / 'se' / '{sample}.sorted.bam',
         ],
         # NOTE: REFERENCE_PREFIX.transcipts.fa should be generated via

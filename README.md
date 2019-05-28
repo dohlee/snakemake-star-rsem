@@ -39,3 +39,5 @@ If it seems OK, provide the pipeline with appropriate number of cores with `-j` 
 ```shell
 $ snakemake -j 32 -p 
 ```
+
+## Estimated runtime
