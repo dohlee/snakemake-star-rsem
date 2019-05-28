@@ -1,3 +1,0 @@
-AttributeError in line 13 of /data/project/dohoon/workbench/snakemake-star-rsem/Snakefile:
-'function' object has no attribute 'values'
-  File "/data/project/dohoon/workbench/snakemake-star-rsem/Snakefile", line 13, in <module>

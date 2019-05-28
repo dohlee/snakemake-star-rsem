@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 26 of /data/project/dohoon/workbench/snakemake-star-rsem/Snakefile:
-Missing input files for rule all:
-/data/project/dohoon/workbench/result/02_rsem/se/case1.genes.results

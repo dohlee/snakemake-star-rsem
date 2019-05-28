@@ -1,4 +1,0 @@
-KeyError in line 31 of /data/project/dohoon/workbench/snakemake-star-rsem/rules/star.smk:
-'star_gtf_chr_prefix'
-  File "/data/project/dohoon/workbench/snakemake-star-rsem/Snakefile", line 3, in <module>
-  File "/data/project/dohoon/workbench/snakemake-star-rsem/rules/star.smk", line 31, in <module>

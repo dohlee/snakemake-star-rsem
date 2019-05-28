@@ -1,4 +1,0 @@
-KeyError in line 181 of /data/project/dohoon/workbench/snakemake-star-rsem/rules/rsem.smk:
-'rsem_calculate_expression_se'
-  File "/data/project/dohoon/workbench/snakemake-star-rsem/Snakefile", line 7, in <module>
-  File "/data/project/dohoon/workbench/snakemake-star-rsem/rules/rsem.smk", line 181, in <module>

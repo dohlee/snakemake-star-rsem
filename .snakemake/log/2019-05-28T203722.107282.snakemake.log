@@ -1,3 +1,0 @@
-SyntaxError in line 167 of /data/project/dohoon/workbench/snakemake-star-rsem/rules/rsem.smk:
-EOL while scanning string literal
-  File "/data/project/dohoon/workbench/snakemake-star-rsem/Snakefile", line 7, in <module>
