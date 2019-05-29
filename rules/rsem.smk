@@ -60,7 +60,7 @@ rule rsem_calculate_expression_pe:
     input:
         # This rule is for paired-end reads.
         reads = [
-            RESULT_DIR / '01_star' / 'pe' / '{sample}.sorted.bam',
+            RESULT_DIR / '01_star' / 'pe' / '{sample}.transcriptome.bam',
         ],
         # NOTE: REFERENCE_PREFIX.transcipts.fa should be generated via
         # rsem-prepare-reference
@@ -169,7 +169,7 @@ rule rsem_calculate_expression_se:
     input:
         # This rule is for paired-end reads.
         read = [
-            RESULT_DIR / '01_star' / 'se' / '{sample}.sorted.bam',
+            RESULT_DIR / '01_star' / 'se' / '{sample}.transcriptome.bam',
         ],
         # NOTE: REFERENCE_PREFIX.transcipts.fa should be generated via
         # rsem-prepare-reference
