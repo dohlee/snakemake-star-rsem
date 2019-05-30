@@ -1,8 +1,8 @@
-name: star-htseq
+name: star-rsem
 channels:
     - bioconda
 dependencies:
     - snakemake
     - star
-    - htseq
+    - rsem
     - samtools
