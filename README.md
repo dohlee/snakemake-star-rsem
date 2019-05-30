@@ -47,7 +47,7 @@ $ snakemake -j 32 -p
 ## Estimated runtime
 It may be useful to have some rough estimates about the running time of the pipeline in mind.
 
-| Rule | Input FASTQ size | Wallclock time (h:m:s) |
+| Rule | Input FASTQ size | Wallclock time (hms) |
 | --- |:---:| ---:|
 | star\_2\_pass\_single | 820M | 0:11:53 |
 | star\_2\_pass\_paired | 1.8G,1.7G | 0:17:46 |
