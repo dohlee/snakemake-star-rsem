@@ -2,6 +2,10 @@
 
 STAR-RSEM pipeline in snakemake.
 
+## Reproducible pipeline
+This pipeline guarantees reproducible results, as long as one uses the same random seed for the pipeline.
+To set another random seed to get slightly different (but still reasonable) result, please change relevant random seed parameters in `config.yaml`.
+
 ## Creating conda environment
 You can create a new conda environment from `environment.yaml` file, 
 ```shell
@@ -41,3 +45,12 @@ $ snakemake -j 32 -p
 ```
 
 ## Estimated runtime
+It may be useful to have some rough estimates about the running time of the pipeline in mind.
+
+| Rule | Input FASTQ size | Wallclock time (h:m:s) |
+| --- |:---:| ---:|
+| star\_2\_pass\_single | 820M | 0:11:53 |
+| star\_2\_pass\_paired | 1.8G,1.7G | 0:17:46 |
+| rsem\_calculate\_expression\_se | 820M | 0.25:19 |
+| rsem\_calculate\_expression\_pe | 1.8G,1.7G | 0:45:06 |
+
