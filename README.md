@@ -20,7 +20,7 @@ $ snakemake --use-conda -p -j 32
 ## Removing conda environment
 If you created a new conda environment, remove the environment when you are done with the pipeline.
 ```shell
-$ conda env remove star-rsem
+$ conda env remove -n star-rsem
 ```
 
 ## Configuring config.yaml
