@@ -1,0 +1,131 @@
+manifest: 'manifest.csv'
+data_dir: 'data'
+result_dir: 'result'
+star_index_dir: 'star_index'
+rsem_reference_dir: 'rsem_index'
+rsem_reference: 'rsem_index/hg38_chr20.transcripts.fa'
+reference:
+    name: 'hg38'
+    prefix: 'reference/hg38/hg38_chr20'
+    fasta: 'reference/hg38/hg38_chr20.fa'
+    gtf: 'reference/hg38/hg38_chr20.annotation.gtf'
+star_genome_generate:
+    extra: ''
+    sjdb_gtf_file: 'reference/hg38/hg38_chr20.annotation.gtf'
+    sjdb_overhang: 100
+    sjdb_gtf_chr_prefix: ''
+    sjdb_gtf_tag_exon_parent_transcript: 'transcript_id'
+star_2_pass_single:
+    extra: ''
+    run_rng_seed: 0
+    quant_mode: 'TranscriptomeSAM'
+    genome_load: 'NoSharedMemory'
+    sjdb_file_chr_start_end: False
+    sjdb_gtf_file: 'reference/hg38/hg38_chr20.annotation.gtf'
+    sjdb_gtf_chr_prefix: ''
+    sjdb_overhang: 100
+    sjdb_gtf_tag_exon_parent_transcript: 'transcript_id'
+    out_filter_type: 'BySJout'
+    out_filter_multimap_score_range: 1
+    out_filter_multimap_n_max: 10
+    out_filter_mismatch_n_max: 10
+    out_filter_mismatch_n_over_l_max: 0.3
+    out_filter_mismatch_n_over_read_l_max: 1.0
+    out_filter_score_min: 0
+    out_filter_score_min_over_l_read: 0.66
+    out_filter_match_n_min: 0
+    out_filter_match_n_min_over_l_read: 0.66
+    out_filter_intron_motifs: 'None'
+    out_filter_intron_strands: 'RemoveInconsistentStrands'
+    out_sj_filter_reads: 'All'
+    out_sj_filter_overhang_min: '30 12 12 12'
+    out_sj_filter_count_unique_min: '3 1 1 1'
+    out_sj_filter_count_total_min: '3 1 1 1'
+    out_sj_filter_dist_to_other_sj_min: '10 0 5 10'
+    out_sj_filter_intron_max_vs_read_n: '50000 100000 200000'
+    align_intron_min: 21
+    align_intron_max: 0
+    align_sj_overhang_min: 5
+star_2_pass_paired:
+    extra: ''
+    run_rng_seed: 0
+    quant_mode: 'TranscriptomeSAM'
+    genome_load: 'NoSharedMemory'
+    sjdb_file_chr_start_end: False
+    sjdb_gtf_file: 'reference/hg38/hg38_chr20.annotation.gtf'
+    sjdb_gtf_chr_prefix: ''
+    sjdb_overhang: 100
+    sjdb_gtf_tag_exon_parent_transcript: 'transcript_id'
+    out_filter_type: 'BySJout'
+    out_filter_multimap_score_range: 1
+    out_filter_multimap_n_max: 10
+    out_filter_mismatch_n_max: 10
+    out_filter_mismatch_n_over_l_max: 0.3
+    out_filter_mismatch_n_over_read_l_max: 1.0
+    out_filter_score_min: 0
+    out_filter_score_min_over_l_read: 0.66
+    out_filter_match_n_min: 0
+    out_filter_match_n_min_over_l_read: 0.66
+    out_filter_intron_motifs: 'None'
+    out_filter_intron_strands: 'RemoveInconsistentStrands'
+    out_sj_filter_reads: 'All'
+    out_sj_filter_overhang_min: '30 12 12 12'
+    out_sj_filter_count_unique_min: '3 1 1 1'
+    out_sj_filter_count_total_min: '3 1 1 1'
+    out_sj_filter_dist_to_other_sj_min: '10 0 5 10'
+    out_sj_filter_intron_max_vs_read_n: '50000 100000 200000'
+    align_intron_min: 21
+    align_intron_max: 0
+    align_sj_overhang_min: 5
+rsem_prepare_reference:
+    extra: ''
+    gff3_rna_patterns: 'mRNA'
+    trusted_sources: False
+    transcript_to_gene_map: False
+    allele_to_gene_map: False
+    quiet: False
+rsem_calculate_expression_pe:
+    extra: '--alignments'
+    no_qualities: False
+    strandedness: 'none'
+    alignments: False
+    bowtie2: False
+    star: False
+    append_names: False
+    seed: 0
+    single_cell_prior: False
+    calc_pme: False
+    calc_ci: False
+    quiet: False
+    sort_bam_by_read_name: False
+    no_bam_output: False
+    sampling_for_bam: False
+    output_genome_bam: False
+    sort_bam_by_coordinate: False
+    sort_bam_memory_per_thread: '1G'
+rsem_calculate_expression_se:
+    extra: '--alignments'
+    no_qualities: False
+    strandedness: 'none'
+    alignments: False
+    bowtie2: False
+    star: False
+    append_names: False
+    seed: 0
+    single_cell_prior: False
+    calc_pme: False
+    calc_ci: False
+    quiet: False
+    sort_bam_by_read_name: False
+    no_bam_output: False
+    sampling_for_bam: False
+    output_genome_bam: False
+    sort_bam_by_coordinate: False
+    sort_bam_memory_per_thread: '1G'
+threads:
+    star_genome_generate: 8
+    star_2_pass_single: 24
+    star_2_pass_paired: 24
+    rsem_prepare_reference: 1
+    rsem_calculate_expression_se: 16
+    rsem_calculate_expression_pe: 16
