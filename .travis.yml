@@ -9,9 +9,9 @@ before_install:
     - ./miniconda.sh -b
     - export PATH=/home/travis/miniconda3/bin:$PATH
     - conda update --yes conda
-    - conda config --add channels defaults
-    - conda config --add channels bioconda
-    - conda config --add channels conda-forge
+    # - conda config --add channels defaults
+    # - conda config --add channels bioconda
+    # - conda config --add channels conda-forge
 
 install:
     - travis_wait 30 conda env create -f environment.yaml
@@ -20,4 +20,4 @@ before_script:
     - source activate star-rsem
     - snakemake -v
 
-script: travis_wait 40 curl https://gist.githubusercontent.com/dohlee/d61aa27ecb00e2bbdb48fda00360e3c1/raw/test.sh | sh
+script: travis_wait 40 curl https://gist.githubusercontent.com/dohlee/d61aa27ecb00e2bbdb48fda00360e3c1/raw/test.sh | bash
