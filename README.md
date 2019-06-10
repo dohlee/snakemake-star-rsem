@@ -1,5 +1,8 @@
 # snakemake-star-rsem
 
+[![Build Status](https://travis-ci.org/dohlee/snakemake-star-rsem.svg?branch=master)](https://travis-ci.org/dohlee/snakemake-star-rsem)
+![Reproduction Status](https://img.shields.io/endpoint.svg?url=https://gist.githubusercontent.com/dohlee/75791354350a7c1b52358581a45af9ab/raw/star-rsem.json)
+
 STAR-RSEM pipeline in snakemake.
 
 ## Reproducible pipeline
