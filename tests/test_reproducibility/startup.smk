@@ -44,7 +44,7 @@ rule subsample_fastq_single:
     threads: 1  # No more than 1 threads will be used.
     params:
         # Required parameters.
-        k = 1000  # Number of sampled reads.
+        k = 5000  # Number of sampled reads.
     wrapper:
         'http://dohlee-bio.info:9193/subsample-fastq'
 
@@ -57,7 +57,7 @@ rule subsample_fastq_paired:
     threads: 1  # No more than 1 threads will be used.
     params:
         # Required parameters.
-        k = 1000  # Number of sampled reads.
+        k = 5000  # Number of sampled reads.
     wrapper:
         'http://dohlee-bio.info:9193/subsample-fastq'
 

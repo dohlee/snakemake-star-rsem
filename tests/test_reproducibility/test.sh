@@ -10,7 +10,7 @@ snakemake -s ../../Snakefile --configfile config.yaml --config result_dir=result
 snakemake -s ../../Snakefile --configfile config.yaml --config result_dir=result1 -p
 
 se_a=$(md5sum result0/${se_result} | cut -d' ' -f1)
-se_b=$(md5sum restul1/${se_result} | cut -d' ' -f1)
+se_b=$(md5sum result1/${se_result} | cut -d' ' -f1)
 pe_a=$(md5sum result0/${pe_result} | cut -d' ' -f1)
 pe_b=$(md5sum result1/${pe_result} | cut -d' ' -f1)
 
