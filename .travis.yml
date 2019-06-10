@@ -20,4 +20,4 @@ before_script:
     - source activate star-rsem
     - snakemake -v
 
-script: travis_wait 40 curl https://gist.githubusercontent.com/dohlee/d61aa27ecb00e2bbdb48fda00360e3c1/raw/test.sh | bash
+script: travis_wait 40 (curl https://gist.githubusercontent.com/dohlee/d61aa27ecb00e2bbdb48fda00360e3c1/raw/test.sh | bash)
