@@ -1,4 +1,5 @@
 configfile: 'config.yaml'
+
 REFERENCE_FASTA = config['reference']['fasta']
 REFERENCE_GTF = config['reference']['gtf']
 RNA_SEQ_SINGLE_TMP = 'data/test_single_full.fastq.gz'

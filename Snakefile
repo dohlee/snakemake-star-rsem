@@ -5,23 +5,33 @@ configfile: 'config.yaml'
 
 include: 'rules/star.smk'
 include: 'rules/rsem.smk'
+include: 'rules/trim-galore.smk'
+include: 'rules/fastqc.smk'
+
+ruleorder: trim_galore_pe > trim_galore_se
 
 manifest = pd.read_csv(config['manifest'])
 RESULT_DIR = Path(config['result_dir'])
 
+SAMPLES = manifest.name.values
+SAMPLE2LIB = {r.name:r.library_layout for r in manifest.to_records()}
 SE_SAMPLES = manifest[manifest.library_layout == 'single'].name.values
 PE_SAMPLES = manifest[manifest.library_layout == 'paired'].name.values
 
-ALIGNED_BAM_SE = expand(str(RESULT_DIR / '01_star' / 'se' / '{sample}.sorted.bam'), sample=SE_SAMPLES)
-ALIGNED_BAM_PE = expand(str(RESULT_DIR / '01_star' / 'pe' / '{sample}.sorted.bam'), sample=PE_SAMPLES)
-EXPRESSIONS_SE = expand(str(RESULT_DIR / '02_rsem' / 'se' / '{sample}.genes.results'), sample=SE_SAMPLES)
-EXPRESSIONS_PE = expand(str(RESULT_DIR / '02_rsem' / 'pe' / '{sample}.genes.results'), sample=PE_SAMPLES)
+RAW_QC_SE = expand(str(DATA_DIR / '{sample}_fastqc.html'), sample=SE_SAMPLES)
+RAW_QC_PE = expand(str(DATA_DIR / '{sample}.read1_fastqc.html'), sample=PE_SAMPLES)
+TRIMMED_QC_SE = expand(str(RESULT_DIR / '01_trim_galore' / '{sample}.trimmed_fastqc.html'), sample=SE_SAMPLES)
+TRIMMED_QC_PE = expand(str(RESULT_DIR / '01_trim_galore' / '{sample}.read1.trimmed_fastqc.html'), sample=PE_SAMPLES)
+ALIGNED_BAM = expand(str(RESULT_DIR / '02_star' / '{sample}.sorted.bam'), sample=SAMPLES)
+EXPRESSIONS = expand(str(RESULT_DIR / '03_rsem' / '{sample}.genes.results'), sample=SAMPLES)
 
 RESULT_FILES = []
-RESULT_FILES.append(ALIGNED_BAM_SE)
-RESULT_FILES.append(ALIGNED_BAM_PE)
-RESULT_FILES.append(EXPRESSIONS_SE)
-RESULT_FILES.append(EXPRESSIONS_PE)
+RESULT_FILES.append(RAW_QC_SE)
+RESULT_FILES.append(RAW_QC_PE)
+RESULT_FILES.append(TRIMMED_QC_SE)
+RESULT_FILES.append(TRIMMED_QC_PE)
+RESULT_FILES.append(ALIGNED_BAM)
+RESULT_FILES.append(EXPRESSIONS)
 
 rule all:
     input: RESULT_FILES

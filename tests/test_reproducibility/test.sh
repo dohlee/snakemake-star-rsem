@@ -2,8 +2,8 @@
 set -e
 
 # Test for reproducibility.
-se_result="02_rsem/se/test_single.genes.results"
-pe_result="02_rsem/pe/test_paired.genes.results"
+se_result="03_rsem/test_single.genes.results"
+pe_result="03_rsem/test_paired.genes.results"
 
 snakemake -s startup.smk -p
 snakemake -s ../../Snakefile --configfile config.yaml --config result_dir=result0 -p
