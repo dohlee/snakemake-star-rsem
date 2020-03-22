@@ -11,14 +11,14 @@ before_install:
     - conda update --yes conda
 
 install:
-    - conda create -n star-rsem -y
-    - conda install -c bioconda rsem=1.3.1 -y
-    - conda install -c bioconda star -y
-    - conda install -c bioconda snakemake -y
+    - conda create -y -n star-rsem
+    - conda install -y -c bioconda rsem=1.3.1
+    - conda install -y -c bioconda star
+    - conda install -y -c bioconda snakemake
     # - travis_wait 30 conda env create -f environment.yaml
 
 before_script:
-    - source activate star-rsem
+    - conda activate star-rsem
     - snakemake -v
     - wget https://gist.githubusercontent.com/dohlee/d61aa27ecb00e2bbdb48fda00360e3c1/raw/test.sh -qO test.sh
     - chmod 755 test.sh
