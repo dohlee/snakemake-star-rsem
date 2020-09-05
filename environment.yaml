@@ -4,6 +4,9 @@ channels:
     - bioconda
     - defaults
 dependencies:
+    - python=3.6
+    - pandas 
+
     - star=2.7.3a
     - rsem=1.3.1
 
