@@ -18,7 +18,7 @@ install:
     - travis_wait 30 conda env create -f environment.yaml
 
 before_script:
-    - conda activate star-rsem
+    - source activate star-rsem
     - snakemake -v
     - wget https://gist.githubusercontent.com/dohlee/d61aa27ecb00e2bbdb48fda00360e3c1/raw/test.sh -qO test.sh
     - chmod 755 test.sh
